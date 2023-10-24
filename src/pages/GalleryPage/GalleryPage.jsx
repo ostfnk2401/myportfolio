@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { GalleryDiv } from './GalleryPage.styled';
-import { Searchbar } from 'components/SearchBar/SearchBar';
-import { fetchImages } from 'components/GalleryApi/GalleryApi';
-import { Loader } from 'components/Loader/Loader';
+import { Searchbar } from 'components/Gallery/SearchBar/SearchBar';
+import { fetchImages } from 'components/Gallery/GalleryApi/GalleryApi';
+import { Loader } from 'components/Gallery/Loader/Loader';
 import { Gallery } from 'components/Gallery/Gallery';
-import { ImageModal } from 'components/Modal/ImageModal';
-import { Button } from 'components/Button/Button';
+import { ImageModal } from 'components/Gallery/Modal/ImageModal';
+import { Button } from 'components/Gallery/Button/Button';
 
 const GalleryPage = () => {
   const [query, setQuery] = useState('');

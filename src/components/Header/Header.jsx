@@ -4,7 +4,7 @@ import { Outlet } from 'react-router-dom';
 
 import { useSelector } from 'react-redux';
 import { selectIsLogin } from 'redux/auth/selectors';
-import { UserMenu } from 'components/UserMenu/UserMenu';
+import { UserMenu } from 'components/Auth/UserMenu/UserMenu';
 import {
   HeaderForm,
   HeaderLi,
@@ -42,6 +42,12 @@ export const Header = () => {
                 <HeaderLi>
                   <HeaderLink to="/gallery">
                     <HeaderText>Gallery</HeaderText>
+                  </HeaderLink>
+                </HeaderLi>
+
+                <HeaderLi>
+                  <HeaderLink to="/movies">
+                    <HeaderText>Movies</HeaderText>
                   </HeaderLink>
                 </HeaderLi>
               </>

@@ -1,5 +1,5 @@
 import { ImgGallery } from './Gallery.styled';
-import { ImageGalleryItem } from './GalleryItem';
+import { ImageGalleryItem } from './GalleryItem/GalleryItem';
 
 export const Gallery = ({ images, openModal }) => {
   return (

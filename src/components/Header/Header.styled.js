@@ -17,6 +17,7 @@ export const HeaderUl = styled.ul`
   margin: 0;
   padding: 0;
   align-items: center;
+  list-style: none;
   gap: 20px;
 `;
 
