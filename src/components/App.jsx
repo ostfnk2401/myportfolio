@@ -1,6 +1,6 @@
 import { Navigate, Route, Routes } from 'react-router-dom';
 import { Header } from './Header/Header';
-import { Home } from 'pages/Home';
+import { Home } from 'pages/Home/Home';
 import { Projects } from 'pages/Projects';
 import { RegisterPage } from 'pages/RegisterPage';
 import { PublicRoute } from './PublicRoute/PublicRoute';
@@ -10,6 +10,7 @@ import { isRefreshing } from 'redux/auth/selectors';
 import { useEffect } from 'react';
 import { refreshUser } from 'redux/auth/operations';
 import { PrivateRoute } from './PrivateRoute/PrivateRoute';
+import GalleryPage from 'pages/GalleryPage/GalleryPage';
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -38,6 +39,12 @@ export const App = () => {
             path="/projects"
             element={
               <PrivateRoute component={<Projects />} redirectTo="/login" />
+            }
+          />
+          <Route
+            path="/gallery"
+            element={
+              <PrivateRoute component={<GalleryPage />} redirectTo="/login" />
             }
           />
         </Route>

@@ -38,6 +38,12 @@ export const Header = () => {
                     <HeaderText>Projects</HeaderText>
                   </HeaderLink>
                 </HeaderLi>
+
+                <HeaderLi>
+                  <HeaderLink to="/gallery">
+                    <HeaderText>Gallery</HeaderText>
+                  </HeaderLink>
+                </HeaderLi>
               </>
             )}
           </HeaderUl>

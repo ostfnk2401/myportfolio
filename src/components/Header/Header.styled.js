@@ -5,6 +5,7 @@ export const HeaderForm = styled.header`
   display: flex;
   padding: 0 40px;
   justify-content: space-between;
+  border-bottom: 1px solid white;
 `;
 
 export const HeaderNav = styled.nav`
