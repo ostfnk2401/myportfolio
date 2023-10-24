@@ -1,37 +1,46 @@
 import { Suspense } from 'react';
-// import GitHub from './GitHub';
-// import {
-//   HeaderItem,
-//   HeaderLink,
-//   HeaderLogo,
-//   HeaderLogoBox,
-//   HeaderLogoText,
-//   HeaderNav,
-//   HeaderSection,
-//   //   HeaderSocial,
-//   //   HeaderSocialLi,
-//   //   HeaderSocialLink,
-//   Headerlist,
-// } from './Header.styled';
-// import MyLogo from './MyLogo';
-import { Link, NavLink, Outlet } from 'react-router-dom';
-import { HeaderLi, HeaderUl } from './Header.styled';
+
+import { NavLink, Outlet } from 'react-router-dom';
+
+import { useSelector } from 'react-redux';
+import { selectIsLogin } from 'redux/auth/selectors';
+import { UserMenu } from 'components/UserMenu/UserMenu';
+import { HeaderLi, HeaderLink, HeaderNav, HeaderUl } from './Header.styled';
 
 export const Header = () => {
+  const isLoggedIn = useSelector(selectIsLogin);
   return (
     <>
-      <HeaderUl>
-        <HeaderLi>
-          <NavLink to="/">Header</NavLink>
-        </HeaderLi>
-        <HeaderLi>
-          <Link to="/home">Home</Link>
-        </HeaderLi>
-        <HeaderLi>
-          <Link to="/projects">Projects</Link>
-        </HeaderLi>
-      </HeaderUl>
-      <Suspense>
+      <Header>
+        <HeaderNav>
+          <HeaderUl>
+            <HeaderLi>
+              <NavLink to="/">
+                <HeaderLink>Home</HeaderLink>
+              </NavLink>
+            </HeaderLi>
+            {!isLoggedIn ? (
+              <>
+                <li>
+                  <NavLink to="/login">
+                    <p>Login</p>
+                  </NavLink>
+                </li>
+              </>
+            ) : (
+              <>
+                <li>
+                  <NavLink to="/projects">
+                    <p>Projects</p>
+                  </NavLink>
+                </li>
+              </>
+            )}
+          </HeaderUl>
+        </HeaderNav>
+        {isLoggedIn && <UserMenu />}
+      </Header>
+      <Suspense fallback={<p>Loading...</p>}>
         <Outlet />
       </Suspense>
     </>

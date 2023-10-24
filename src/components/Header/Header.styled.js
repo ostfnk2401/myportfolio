@@ -1,8 +1,16 @@
 import styled from 'styled-components';
 
+export const Header = styled.header`
+  display: flex;
+`;
+
+export const HeaderNav = styled.nav``;
+
 export const HeaderUl = styled.ul``;
 
 export const HeaderLi = styled.li``;
+
+export const HeaderLink = styled.a``;
 
 // export const HeaderSection = styled.header`
 //   background-color: #0f1624;

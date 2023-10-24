@@ -4,19 +4,41 @@ import { Home } from 'pages/Home';
 import { Projects } from 'pages/Projects';
 import { RegisterPage } from 'pages/RegisterPage';
 import { PublicRoute } from './PublicRoute/PublicRoute';
-import { Register } from './Register/Register';
+import LoginPage from 'pages/LoginPage';
+import { useDispatch, useSelector } from 'react-redux';
+import { isRefreshing } from 'redux/auth/selectors';
+import { useEffect } from 'react';
+import { refreshUser } from 'redux/auth/operations';
+import { PrivateRoute } from './PrivateRoute/PrivateRoute';
 
 export const App = () => {
-  return (
+  const dispatch = useDispatch();
+  const isRefresh = useSelector(isRefreshing);
+  useEffect(() => {
+    dispatch(refreshUser());
+  }, [dispatch]);
+  return isRefresh ? (
+    <p>Refreshing... </p>
+  ) : (
     <>
       <Routes>
-        <Route path="/register" element={<RegisterPage />} />
         <Route path="/" element={<Header />}>
           <Route index element={<Home />} />
-          <Route path="/projects" element={<Projects />} />
           <Route
             path="/register"
-            element={<PublicRoute component={<Register />} redirectTo="/" />}
+            element={
+              <PublicRoute component={<RegisterPage />} redirectTo="/" />
+            }
+          />
+          <Route
+            path="/login"
+            element={<PublicRoute component={<LoginPage />} redirectTo="/" />}
+          />
+          <Route
+            path="/projects"
+            element={
+              <PrivateRoute component={<Projects />} redirectTo="/login" />
+            }
           />
         </Route>
         <Route path="*" element={<Navigate to="/" />} />
