@@ -12,7 +12,7 @@ export const UserMenu = () => {
     <Box>
       <p>Welcome, {user.name}</p>
       <Button type="button" onClick={() => dispatch(logout())}>
-        Log Out <GiExitDoor size={36} />
+        <GiExitDoor color="white" size={26} />
       </Button>
     </Box>
   );

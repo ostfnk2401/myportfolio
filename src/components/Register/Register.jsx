@@ -21,7 +21,7 @@ export const Register = () => {
 
   const handleSubmit = (values, { resetForm }) => {
     if (values.password !== values.confirmPassword) {
-      Notiflix.Notify.failure(' перевірте пароль!');
+      Notiflix.Notify.failure('Check your password!');
       return;
     }
 
@@ -29,10 +29,10 @@ export const Register = () => {
       .unwrap()
       .then(() => {
         resetForm();
-        Notiflix.Notify.success('success');
+        Notiflix.Notify.success('Success');
       })
       .catch(() => {
-        Notiflix.Notify.failure('error');
+        Notiflix.Notify.failure('Error');
       });
   };
   return (

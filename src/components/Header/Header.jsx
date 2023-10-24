@@ -1,45 +1,57 @@
 import { Suspense } from 'react';
 
-import { NavLink, Outlet } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
 
 import { useSelector } from 'react-redux';
 import { selectIsLogin } from 'redux/auth/selectors';
 import { UserMenu } from 'components/UserMenu/UserMenu';
-import { HeaderLi, HeaderLink, HeaderNav, HeaderUl } from './Header.styled';
+import {
+  HeaderForm,
+  HeaderLi,
+  HeaderLink,
+  HeaderLogLink,
+  HeaderLogText,
+  HeaderLogin,
+  HeaderNav,
+  HeaderText,
+  HeaderUl,
+} from './Header.styled';
 
 export const Header = () => {
   const isLoggedIn = useSelector(selectIsLogin);
   return (
     <>
-      <Header>
+      <HeaderForm>
         <HeaderNav>
           <HeaderUl>
             <HeaderLi>
-              <NavLink to="/">
-                <HeaderLink>Home</HeaderLink>
-              </NavLink>
+              <HeaderLink to="/">
+                <HeaderText>Home</HeaderText>
+              </HeaderLink>
             </HeaderLi>
             {!isLoggedIn ? (
-              <>
-                <li>
-                  <NavLink to="/login">
-                    <p>Login</p>
-                  </NavLink>
-                </li>
-              </>
+              <></>
             ) : (
               <>
-                <li>
-                  <NavLink to="/projects">
-                    <p>Projects</p>
-                  </NavLink>
-                </li>
+                <HeaderLi>
+                  <HeaderLink to="/projects">
+                    <HeaderText>Projects</HeaderText>
+                  </HeaderLink>
+                </HeaderLi>
               </>
             )}
           </HeaderUl>
         </HeaderNav>
-        {isLoggedIn && <UserMenu />}
-      </Header>
+        {isLoggedIn ? (
+          <UserMenu />
+        ) : (
+          <HeaderLogin>
+            <HeaderLogLink to="/login">
+              <HeaderLogText>Login</HeaderLogText>
+            </HeaderLogLink>
+          </HeaderLogin>
+        )}
+      </HeaderForm>
       <Suspense fallback={<p>Loading...</p>}>
         <Outlet />
       </Suspense>

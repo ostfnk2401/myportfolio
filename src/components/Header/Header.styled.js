@@ -1,62 +1,52 @@
+import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
-export const Header = styled.header`
+export const HeaderForm = styled.header`
+  display: flex;
+  padding: 0 40px;
+  justify-content: space-between;
+`;
+
+export const HeaderNav = styled.nav`
   display: flex;
 `;
 
-export const HeaderNav = styled.nav``;
+export const HeaderUl = styled.ul`
+  display: flex;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+  gap: 20px;
+`;
 
-export const HeaderUl = styled.ul``;
+export const HeaderLi = styled.li`
+  margin: 0;
+  padding: 20px 0;
+  cursor: pointer;
+`;
 
-export const HeaderLi = styled.li``;
+export const HeaderLink = styled(NavLink)`
+  text-decoration: none;
+`;
 
-export const HeaderLink = styled.a``;
+export const HeaderText = styled.p`
+  color: white;
+  font-weight: 700;
+  font-size: 18px;
+  margin: 0;
+`;
+export const HeaderLogin = styled.div`
+  margin: 0;
+  padding: 20px 0;
+  cursor: pointer;
+`;
 
-// export const HeaderSection = styled.header`
-//   background-color: #0f1624;
-//   padding: 30px 20px;
-//   display: flex;
-// `;
-// export const HeaderLogoBox = styled.a`
-//   margin-right: 40px;
-//   text-decoration: none;
-//   display: flex;
-//   gap: 12px;
-// `;
-// export const HeaderLogo = styled.div``;
-// export const HeaderLogoText = styled.p`
-//   color: white;
-//   text-decoration: none;
-//   font-weight: 500;
-//   font-size: 20px;
-//   margin: 0;
-// `;
-
-// export const HeaderNav = styled.nav`
-//   display: flex;
-// `;
-
-// export const Headerlist = styled.ul`
-//   display: flex;
-//   list-style: none;
-//   gap: 20px;
-//   margin: 0;
-//   padding: 0;
-// `;
-
-// export const HeaderItem = styled.li``;
-// export const HeaderLink = styled.a`
-//   color: white;
-//   text-decoration: none;
-//   font-weight: 500;
-//   font-size: 20px;
-//   padding: 16px 0;
-// `;
-// export const HeaderSocial = styled.ul`
-//   display: flex;
-//   margin: 0;
-//   padding: 0;
-//   list-style: none;
-// `;
-// export const HeaderSocialLi = styled.li``;
-// export const HeaderSocialLink = styled.a``;
+export const HeaderLogLink = styled(NavLink)`
+  text-decoration: none;
+`;
+export const HeaderLogText = styled.p`
+  color: white;
+  font-weight: 700;
+  font-size: 18px;
+  margin: 0;
+`;
