@@ -64,7 +64,6 @@ export const LoginField = styled(Field)`
 `;
 
 export const LoginLink = styled(Link)`
-  color: #38b6ff;
   text-decoration: none;
   font-weight: 500;
   &:hover,

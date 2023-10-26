@@ -8,7 +8,6 @@ export const ButtonClass = styled.button`
   border: none;
   border-radius: 83px;
   background: linear-gradient(270deg, #13adc7 0%, #6978d1 66.67%, #945dd6 100%);
-  color: white;
   font-weight: 700;
   font-size: 16px;
   margin-top: 30px;

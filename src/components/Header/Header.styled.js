@@ -5,7 +5,6 @@ export const HeaderForm = styled.header`
   display: flex;
   padding: 0 40px;
   justify-content: space-between;
-  border-bottom: 1px solid white;
 `;
 
 export const HeaderNav = styled.nav`
@@ -32,7 +31,6 @@ export const HeaderLink = styled(NavLink)`
 `;
 
 export const HeaderText = styled.p`
-  color: white;
   font-weight: 700;
   font-size: 18px;
   margin: 0;
@@ -47,8 +45,15 @@ export const HeaderLogLink = styled(NavLink)`
   text-decoration: none;
 `;
 export const HeaderLogText = styled.p`
-  color: white;
   font-weight: 700;
   font-size: 18px;
   margin: 0;
+`;
+
+export const SwitchBox = styled.div`
+  display: flex;
+  position: absolute;
+  top: 15px;
+  right: 100px;
+  align-items: center;
 `;

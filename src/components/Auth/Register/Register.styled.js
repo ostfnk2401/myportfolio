@@ -16,7 +16,6 @@ export const Registration = styled.div`
 `;
 export const RegisterTitle = styled.h1`
   margin: 0 0 40px;
-  color: white;
 `;
 export const RegisterForm = styled(Form)`
   display: flex;
@@ -30,7 +29,6 @@ export const RegisterField = styled(Field)`
   outline: none;
   font-weight: 500;
   font-size: 16px;
-  color: #fff;
   transition: all 0.2s ease;
   border-bottom: 1.5px solid #d9d9d9;
   background-color: transparent;
@@ -47,7 +45,7 @@ export const RegisterBtn = styled.button`
   border: none;
   border-radius: 83px;
   background: linear-gradient(270deg, #13adc7 0%, #6978d1 66.67%, #945dd6 100%);
-  color: white;
+
   font-weight: 700;
   font-size: 16px;
   margin-top: 30px;
@@ -74,7 +72,6 @@ export const RegisterLogin = styled(Link)`
   border: none;
   border-radius: 83px;
   background: linear-gradient(270deg, #13adc7 0%, #6978d1 66.67%, #945dd6 100%);
-  color: white;
   font-weight: 700;
   font-size: 16px;
   margin-top: 30px;

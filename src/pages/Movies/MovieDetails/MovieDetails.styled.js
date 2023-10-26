@@ -1,11 +1,16 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-export const MovieBox = styled.div``;
+export const MovieBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding: 20px 40px;
+  gap: 20px;
+`;
 
 export const MovieBtn = styled.button`
   display: inline-block;
-  margin: 0 auto;
+
   width: 68px;
 
   border: none;
@@ -29,9 +34,21 @@ export const MovieBtn = styled.button`
   }
 `;
 
-export const GoBack = styled(Link)`
-  text-decoration: none;
-  color: white;
+export const MovieImage = styled.img`
+  margin-bottom: 20px;
 `;
 
-export const MovieImage = styled.img``;
+export const MovieHeader = styled.h1`
+  color: white;
+`;
+export const MovieUl = styled.ul``;
+export const MovieLi = styled.li``;
+
+export const MovieLink = styled(Link)`
+  font-weight: 700;
+  font-size: 20px;
+
+  &:hover {
+    color: #ffc727;
+  }
+`;

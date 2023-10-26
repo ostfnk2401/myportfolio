@@ -22,7 +22,6 @@ export const MoviesImg = styled.img`
 `;
 export const MoviesTitle = styled.p`
   max-width: 200px;
-  color: white;
   font-weight: 700;
   padding: 10px 10px;
   margin: 0;

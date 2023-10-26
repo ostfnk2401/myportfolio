@@ -1,18 +1,20 @@
-import { ImgGallery } from './Gallery.styled';
+import { GalleryBox, ImgGallery } from './Gallery.styled';
 import { ImageGalleryItem } from './GalleryItem/GalleryItem';
 
 export const Gallery = ({ images, openModal }) => {
   return (
     <>
-      <ImgGallery>
-        {images.map(image => (
-          <ImageGalleryItem
-            key={image.id}
-            image={image}
-            openModal={openModal}
-          />
-        ))}
-      </ImgGallery>
+      <GalleryBox>
+        <ImgGallery>
+          {images.map(image => (
+            <ImageGalleryItem
+              key={image.id}
+              image={image}
+              openModal={openModal}
+            />
+          ))}
+        </ImgGallery>
+      </GalleryBox>
     </>
   );
 };

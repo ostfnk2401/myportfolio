@@ -1,5 +1,3 @@
-import { Component } from 'react';
-import PropTypes from 'prop-types';
 import {
   SearchButton,
   SearchForm,
@@ -9,38 +7,29 @@ import {
   SearchLabel,
 } from './SearchMovie.styled';
 
-export class SearchMovie extends Component {
-  state = {
-    input: '',
+export const SearchMovie = ({ onSubmit }) => {
+  const handleSubmit = event => {
+    event.preventDefault();
+    const { value } = event.target.elements.query;
+    onSubmit(value);
+    event.target.reset();
   };
-
-  handleSubmit = e => {
-    e.preventDefault();
-    this.props.setQuery(this.state.input);
-  };
-
-  render() {
-    return (
-      <SearchHeader>
-        <SearchForm onSubmit={this.handleSubmit}>
-          <SearchButton type="submit">
-            <SearchIcon />
-          </SearchButton>
-          <SearchLabel>
-            <span>Search</span>
-          </SearchLabel>
-          <SearchFormInput
-            type="text"
-            value={this.state.input}
-            placeholder="Search movies"
-            onChange={e => this.setState({ input: e.target.value })}
-          />
-        </SearchForm>
-      </SearchHeader>
-    );
-  }
-}
-
-SearchMovie.propTypes = {
-  setQuery: PropTypes.func.isRequired,
+  return (
+    <SearchHeader>
+      <SearchForm onSubmit={handleSubmit}>
+        <SearchButton type="submit">
+          <SearchIcon />
+        </SearchButton>
+        <SearchLabel>
+          <span>Search</span>
+        </SearchLabel>
+        <SearchFormInput
+          type="text"
+          name="query"
+          required
+          placeholder="Search movies"
+        />
+      </SearchForm>
+    </SearchHeader>
+  );
 };

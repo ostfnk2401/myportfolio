@@ -1,7 +1,14 @@
 import { getMovieById } from 'components/Movies/MoviesApi/MoviesApi';
-import { useEffect, useRef, useState } from 'react';
-import { Link, Outlet, useLocation, useParams } from 'react-router-dom';
-import { GoBack, MovieBox, MovieBtn, MovieImage } from './MovieDetails.styled';
+import { useEffect, useState } from 'react';
+import { Outlet, useParams } from 'react-router-dom';
+import {
+  MovieBox,
+  MovieHeader,
+  MovieImage,
+  MovieLi,
+  MovieLink,
+  MovieUl,
+} from './MovieDetails.styled';
 
 const defaultImg =
   'https://www.repricerexpress.com/wp-content/uploads/2019/07/shutterstock_13308901581.jpg';
@@ -10,8 +17,6 @@ export const MovieDetails = () => {
   const [movie, setMovie] = useState(null);
   const { movieId } = useParams();
 
-  const location = useLocation();
-  const goBack = useRef(location.state?.from || '/');
   useEffect(() => {
     getMovieById(movieId).then(setMovie);
   }, [movieId]);
@@ -21,9 +26,6 @@ export const MovieDetails = () => {
   return (
     <>
       <MovieBox>
-        <MovieBtn>
-          <GoBack to={goBack.current}>Go back</GoBack>
-        </MovieBtn>
         <MovieImage
           src={
             movie.poster_path
@@ -33,15 +35,15 @@ export const MovieDetails = () => {
           alt={movie.title}
           width="300px"
         />
-        <h1>{movie.title}</h1>
-        <ul>
-          <li>
-            <Link to="cast">Cast</Link>
-          </li>
-          <li>
-            <Link to="reviews">Reviews</Link>
-          </li>
-        </ul>
+        <MovieHeader>{movie.title}</MovieHeader>
+        <MovieUl>
+          <MovieLi>
+            <MovieLink to="cast">Cast</MovieLink>
+          </MovieLi>
+          <MovieLi>
+            <MovieLink to="reviews">Reviews</MovieLink>
+          </MovieLi>
+        </MovieUl>
       </MovieBox>
       <Outlet />
     </>

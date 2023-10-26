@@ -12,3 +12,4 @@ export const ImgGallery = styled.ul`
   margin-left: auto;
   margin-right: auto;
 `;
+export const GalleryBox = styled.section``;

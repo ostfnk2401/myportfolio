@@ -10,7 +10,6 @@ export const SearchHeader = styled.div`
   padding-left: 24px;
   padding-top: 12px;
   padding-bottom: 12px;
-  color: #fff;
   background-color: relative;
 `;
 

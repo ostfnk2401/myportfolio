@@ -28,33 +28,35 @@ export const Login = () => {
   };
 
   return (
-    <LoginBox>
-      <Formik initialValues={initialValues} onSubmit={handleSubmit}>
-        <LoginForm>
-          <LoginTitle>Login</LoginTitle>
-          <LoginWrapper>
-            <LoginField
-              type="email"
-              id="email"
-              name="email"
-              placeholder="Enter your email"
-            />
-          </LoginWrapper>
-          <LoginWrapper>
-            <LoginField
-              type="password"
-              id="password"
-              name="password"
-              placeholder="Enter your password"
-            />
-          </LoginWrapper>
-          <LoginBtn type="submit">Login</LoginBtn>
-          <LoginDiv>
-            <LoginText>Don't have an account?</LoginText>
-            <LoginLink to="/register">Registration</LoginLink>
-          </LoginDiv>
-        </LoginForm>
-      </Formik>
-    </LoginBox>
+    <>
+      <LoginBox>
+        <Formik initialValues={initialValues} onSubmit={handleSubmit}>
+          <LoginForm>
+            <LoginTitle>Login</LoginTitle>
+            <LoginWrapper>
+              <LoginField
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Enter your email"
+              />
+            </LoginWrapper>
+            <LoginWrapper>
+              <LoginField
+                type="password"
+                id="password"
+                name="password"
+                placeholder="Enter your password"
+              />
+            </LoginWrapper>
+            <LoginBtn type="submit">Login</LoginBtn>
+            <LoginDiv>
+              <LoginText>Don't have an account?</LoginText>
+              <LoginLink to="/register">Registration</LoginLink>
+            </LoginDiv>
+          </LoginForm>
+        </Formik>
+      </LoginBox>
+    </>
   );
 };
