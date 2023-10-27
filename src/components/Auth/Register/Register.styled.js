@@ -35,6 +35,7 @@ export const RegisterField = styled(Field)`
   transition: all 0.2s ease;
   border-bottom: 2px solid grey;
   background-color: transparent;
+  color: #fff;
 `;
 export const RegisterLabel = styled.div`
   position: relative;

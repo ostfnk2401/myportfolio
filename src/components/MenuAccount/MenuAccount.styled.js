@@ -27,11 +27,10 @@ export const AccountIcon = styled(MdAccountCircle)`
 `;
 export const DropDownMenu = styled.div`
   position: absolute;
-  background: rgba(199, 199, 199, 0.12);
   box-shadow: 0px 0px 15px 8px rgba(255, 255, 255, 0.36);
   top: 100px;
   right: 20px;
-  // background-color: #1a1919;
+  background-color: #1a1919;
   border-radius: 8px;
   padding: 10px 20px;
   width: 200px;
