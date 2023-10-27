@@ -12,10 +12,12 @@ export const Registration = styled.div`
   width: 400px;
   border-radius: 10px;
   padding: 40px 20px;
-  background: rgba(199, 199, 199, 0.18);
+  background: rgba(199, 199, 199, 0.12);
+  box-shadow: 0px 0px 15px 8px rgba(255, 255, 255, 0.36);
 `;
 export const RegisterTitle = styled.h1`
   margin: 0 0 40px;
+  color: white;
 `;
 export const RegisterForm = styled(Form)`
   display: flex;
@@ -25,12 +27,13 @@ export const RegisterForm = styled(Form)`
 export const RegisterField = styled(Field)`
   border: none;
   width: 250px;
-  height: 100%;
+  height: 30px;
   outline: none;
   font-weight: 500;
   font-size: 16px;
+  padding-left: 24px;
   transition: all 0.2s ease;
-  border-bottom: 1.5px solid #d9d9d9;
+  border-bottom: 2px solid grey;
   background-color: transparent;
 `;
 export const RegisterLabel = styled.div`
@@ -50,6 +53,7 @@ export const RegisterBtn = styled.button`
   font-size: 16px;
   margin-top: 30px;
   cursor: pointer;
+  color: white;
   transition: background 250ms cubic-bezier(0.4, 0, 0.2, 1);
   &:hover,
   &:focus {
@@ -59,6 +63,7 @@ export const RegisterBtn = styled.button`
       #9e40ba 97.04%,
       #7000ff 150.71%
     );
+    scale: 1.02;
     box-shadow: 1px 5px 8px 0px rgba(0, 0, 0, 0.5);
     transform: scale(1.01);
   }
@@ -76,6 +81,7 @@ export const RegisterLogin = styled(Link)`
   font-size: 16px;
   margin-top: 30px;
   cursor: pointer;
+  color: white;
   transition: background 250ms cubic-bezier(0.4, 0, 0.2, 1);
   &:focus,
   &:hover {
@@ -85,6 +91,7 @@ export const RegisterLogin = styled(Link)`
       #9e40ba 97.04%,
       #7000ff 150.71%
     );
+    scale: 1.02;
   }
 `;
 export const EmailIcon = styled(IoMdMail)`
@@ -93,7 +100,7 @@ export const EmailIcon = styled(IoMdMail)`
 
   color: rgba(255, 255, 255, 0.4);
   position: absolute;
-  left: -25px;
+  left: 0;
   top: 45%;
   transform: translateY(-50%);
   pointer-events: none;
@@ -104,7 +111,7 @@ export const PasswordlIcon = styled(IoMdLock)`
   width: 20px;
   color: rgba(255, 255, 255, 0.4);
   position: absolute;
-  left: -25px;
+  left: 0;
   top: 45%;
   transform: translateY(-50%);
   pointer-events: none;
@@ -115,7 +122,7 @@ export const NameRegisterIcon = styled(BiSolidUserRectangle)`
   width: 20px;
   color: rgba(255, 255, 255, 0.4);
   position: absolute;
-  left: -25px;
+  left: 0;
   top: 45%;
   transform: translateY(-50%);
   pointer-events: none;

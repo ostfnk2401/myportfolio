@@ -6,10 +6,8 @@ export const SearchHeader = styled.div`
   justify-content: center;
   align-items: center;
   min-height: 64px;
-  padding-right: 24px;
-  padding-left: 24px;
-  padding-top: 12px;
-  padding-bottom: 12px;
+  padding: 12px 24px;
+  margin-bottom: 50px;
   background-color: relative;
 `;
 

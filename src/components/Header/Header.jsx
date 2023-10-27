@@ -14,12 +14,11 @@ import {
   HeaderNav,
   HeaderText,
   HeaderUl,
-  SwitchBox,
 } from './Header.styled';
-import ReactSwitch from 'react-switch';
+
 import { MenuAccount } from 'components/MenuAccount/MenuAccount';
 
-export const Header = ({ theme, toggleTheme }) => {
+export const Header = () => {
   const isLoggedIn = useSelector(selectIsLogin);
   return (
     <>
@@ -56,17 +55,6 @@ export const Header = ({ theme, toggleTheme }) => {
             )}
           </HeaderUl>
         </HeaderNav>
-        <SwitchBox>
-          <ReactSwitch
-            onChange={toggleTheme}
-            checked={theme === 'dark'}
-            onColor="#f0e000"
-            offColor="#363636"
-            height={24}
-            uncheckedIcon={false}
-            checkedIcon={false}
-          />
-        </SwitchBox>
 
         {isLoggedIn ? (
           <MenuAccount />

@@ -15,8 +15,14 @@ import {
 import { useDispatch } from 'react-redux';
 import Notiflix from 'notiflix';
 import { register } from 'redux/auth/operations';
+import { usePasswordToggle } from 'hooks/usePasswordToggle';
+import { TogglePasswordIcon } from '../TogglePasswordVisibility/TogglePasswordVisibility';
 
 export const Register = () => {
+  const { showPasswords, togglePasswordVisibility } = usePasswordToggle([
+    'password1',
+    'password2',
+  ]);
   const dispatch = useDispatch();
 
   const handleSubmit = (values, { resetForm }) => {
@@ -54,7 +60,7 @@ export const Register = () => {
                 autoComplete="off"
                 name="name"
                 type="text"
-                placeholder="Enter your name"
+                placeholder="Name"
               />
               <NameRegisterIcon />
             </RegisterLabel>
@@ -63,7 +69,7 @@ export const Register = () => {
                 autoComplete="off"
                 name="email"
                 type="email"
-                placeholder="Enter your email"
+                placeholder="Email"
               />
               <EmailIcon />
             </RegisterLabel>
@@ -72,7 +78,11 @@ export const Register = () => {
                 autoComplete="off"
                 name="password"
                 type="password"
-                placeholder="Enter your password"
+                placeholder="Password"
+              />
+              <TogglePasswordIcon
+                showPassword={showPasswords.password1}
+                onToggle={() => togglePasswordVisibility('password1')}
               />
               <PasswordlIcon />
             </RegisterLabel>
@@ -83,6 +93,11 @@ export const Register = () => {
                 placeholder="Confirm password"
                 autoComplete="off"
               />
+              <TogglePasswordIcon
+                showPassword={showPasswords.password2}
+                onToggle={() => togglePasswordVisibility('password2')}
+              />
+
               <PasswordlIcon />
             </RegisterLabel>
             <RegisterBtn type="submit">Register</RegisterBtn>

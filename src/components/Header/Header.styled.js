@@ -28,6 +28,10 @@ export const HeaderLi = styled.li`
 
 export const HeaderLink = styled(NavLink)`
   text-decoration: none;
+  color: #fff;
+  &:hover {
+    color: #039dfc;
+  }
 `;
 
 export const HeaderText = styled.p`
