@@ -52,6 +52,10 @@ export const HeaderLogText = styled.p`
   font-weight: 700;
   font-size: 18px;
   margin: 0;
+  color: #fff;
+  &:hover {
+    color: #039dfc;
+  }
 `;
 
 export const SwitchBox = styled.div`
